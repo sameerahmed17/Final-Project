@@ -12,8 +12,10 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import PeopleIcon from '@mui/icons-material/People';
 import WorkIcon from '@mui/icons-material/Work';
 import ChatIcon from '@mui/icons-material/Chat';
-import { Button, Container } from '@mui/material';
+import { Avatar, Button, Container } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import ProfileLogo from "../assets/unnamed.jpg"
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -54,29 +56,27 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
-  const [value, setValue] = React.useState(0);
   return (
-    <AppBar
+    <AppBar className='w-100'
       position="static"
       sx={{
         backgroundColor: 'white',
         color: 'black',
         boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+        width: '100%',
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
+        <Toolbar className='d-flex justify-content-center align-items-center'>
           {/* LinkedIn Icon */}
-          <Button className='bg-primary'>
+          <Avatar className="d-block d-sm-none"
+            alt="Sameer Ahmed"
+            src={ProfileLogo}
+            sx={{ width: 40, height: 40, marginRight: 2 }}
+          />
+          <Button className="d-none d-sm-block">
             <LinkedInIcon sx={{ fontSize: '45px' }} />
           </Button>
-
           {/* Search Input */}
           <Search>
             <SearchIconWrapper>
@@ -94,50 +94,57 @@ export default function Navbar() {
             <ChatIcon />
           </IconButton>
 
-          {/* Icons (hide on small screens) */}
-
-          {/* <Box sx={{ width: 500 }}>
-      <BottomNavigation
-        showLabels
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-      >
-        <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-        <BottomNavigationAction label="My Network" icon={<PeopleIcon />} />
-        <BottomNavigationAction label="Jobs" icon={<WorkIcon />} />
-        <BottomNavigationAction label="Messaging" icon={<ChatIcon />} />
-        <BottomNavigationAction label="Notifications" icon={<NotificationsIcon />} />
-      </BottomNavigation>
-    </Box> */}
           <Box
             sx={{
               display: { xs: 'none', sm: 'flex' },
-              gap: 2,
+              gap: 4, 
               justifyContent: 'center',
               alignItems: 'center',
               flexGrow: 1,
             }}
           >
-            <IconButton size="large" color="inherit">
-              <HomeIcon />
-            </IconButton>
-            <IconButton size="large" color="inherit">
-              <PeopleIcon />
-            </IconButton>
-            <IconButton size="large" color="inherit">
-              <WorkIcon />
-            </IconButton>
-            <IconButton size="large" color="inherit">
-              <ChatIcon />
-            </IconButton>
-            <IconButton size="large" color="inherit">
-              <Badge badgeContent={1} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+            <Box className="d-flex flex-column align-items-center">
+              <IconButton size="large" color="inherit">
+                <HomeIcon />
+              </IconButton>
+              <span style={{ fontSize: '12px',}}>Home</span>
+            </Box>
+            <Box className="d-flex flex-column align-items-center">
+             <IconButton size="large" color="inherit">
+                <PeopleIcon />
+              </IconButton>
+              <span style={{ fontSize: '12px',}}>My Network</span>
+            </Box>
+            <Box className="d-flex flex-column align-items-center">
+             <Link to="/job-page">
+             <IconButton size="large">
+                <WorkIcon />
+              </IconButton></Link>
+              <span style={{ fontSize: '12px',}}>Jobs</span>
+            </Box>
+            <Box className="d-flex flex-column align-items-center">
+              <IconButton size="large" color="inherit">
+                <ChatIcon />
+              </IconButton>
+              <span style={{ fontSize: '12px',}}>Messaging</span>
+            </Box>
+            <Box className="d-flex flex-column align-items-center">
+              <IconButton size="large" color="inherit">
+                <Badge badgeContent={1} color="error">
+                  <NotificationsIcon />
+                </Badge>
+              </IconButton>
+              <span style={{ fontSize: '12px',}}>Notifications</span>
+            </Box>
+            <Box className="d-flex flex-column align-items-center">
+            <Link to="/profile-details">
+            <Avatar
+                alt="Sameer Ahmed"
+                src={ProfileLogo} /></Link>
+              <span style={{ fontSize: '12px',}}>Me</span>
+            </Box>
           </Box>
+
         </Toolbar>
       </Container>
     </AppBar>
