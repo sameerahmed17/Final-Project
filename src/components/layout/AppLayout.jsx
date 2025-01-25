@@ -55,7 +55,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Navbar() {
+export default function AppLayout() {
   return (
     <AppBar className='w-100'
       position="static"
@@ -116,10 +116,11 @@ export default function Navbar() {
               <span style={{ fontSize: '12px',}}>My Network</span>
             </Box>
             <Box className="d-flex flex-column align-items-center">
-             <Link to="/job-page">
+             {/* <Link to="/job-page"> */}
              <IconButton size="large">
                 <WorkIcon />
-              </IconButton></Link>
+              </IconButton>
+              {/* </Link> */}
               <span style={{ fontSize: '12px',}}>Jobs</span>
             </Box>
             <Box className="d-flex flex-column align-items-center">
@@ -137,10 +138,11 @@ export default function Navbar() {
               <span style={{ fontSize: '12px',}}>Notifications</span>
             </Box>
             <Box className="d-flex flex-column align-items-center">
-            <Link to="/profile-details">
+            {/* <Link to="/profile-details"> */}
             <Avatar
                 alt="Sameer Ahmed"
-                src={ProfileLogo} /></Link>
+                src={ProfileLogo} />
+                {/* </Link> */}
               <span style={{ fontSize: '12px',}}>Me</span>
             </Box>
           </Box>
