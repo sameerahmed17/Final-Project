@@ -16,7 +16,6 @@ import { Avatar, Button, Container } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ProfileLogo from "../assets/unnamed.jpg"
 import { Link, Outlet } from 'react-router-dom';
-import HomePage from '../home/HomePage';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -47,7 +46,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${ theme.spacing(4) })`,
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('md')]: {
@@ -111,9 +110,9 @@ export default function AppLayout() {
               </Box>
               <Box className="d-flex flex-column align-items-center">
                 <Link to="/jobs-details">
-                <IconButton size="large">
-                  <WorkIcon />
-                </IconButton>
+                  <IconButton size="large">
+                    <WorkIcon />
+                  </IconButton>
                 </Link>
                 <span style={{ fontSize: '12px', }}>Jobs</span>
               </Box>
@@ -143,9 +142,8 @@ export default function AppLayout() {
 
           </Toolbar>
         </Container>
-        <Outlet />
       </AppBar>
-      <HomePage />
+      <Outlet />
     </>
   );
 }

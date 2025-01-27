@@ -1,5 +1,6 @@
 import React from "react";
-import { Avatar, Box, Button, Card, CardContent, Typography } from "@mui/material";
+import { Avatar, Box, Card, CardContent, Typography } from "@mui/material";
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 import ProfileLogo from "../../assets/unnamed.jpg";
 
 const AboutSection = () => {
@@ -53,24 +54,24 @@ const AboutSection = () => {
           <span className="text-primary">1,153</span>
         </Typography> 
 <hr />
-        <Typography variant="body2" sx={{ fontSize: "12px", color: "text.secondary", mb: 2 }}>
+        <Typography variant="body1" sx={{ fontSize: "12px" }}>
           Connect with 3.8x more decision-makers
         </Typography>
-        <Button
-          variant="contained"
-          size="small"
-          
-        >
-          Try Sales Nav for PKR0
-        </Button>
+        
+        <Typography variant="body2">
+        <strong>
+        Try Sales Nav for PKR0
+        </strong>
+        </Typography>
       </CardContent>
 
 
+      <hr />
       {/* Saved Items */}
       <CardContent sx={{ padding: "0 16px" }}>
         <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            <hr />
-          <strong>📂 Saved items</strong>
+            <BookmarkIcon/>
+          <strong>Saved items</strong>
         </Typography>
       </CardContent>
     </Card>

@@ -36,9 +36,6 @@ const GamesSection = () => {
                   {game.description}
                 </Typography>
               </Box>
-              {/* <Typography variant="body2" color="primary">
-                &gt;
-              </Typography> */}
             </Box>
           ))}
         </CardContent>
