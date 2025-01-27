@@ -3,22 +3,22 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import AppLayout from './components/layout/AppLayout';
-import HomePage from './components/home/HomePage';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ProfileDetailsPage from './components/profile-details/ProfileDetailsPage';
+import JobsDetailsPAge from './components/jobsdetails/JobsDetailsPAge';
 
 function App() {
-  // const router = createBrowserRouter ([
-  //   {path:"/", element:   <AppLayout />},
-  //   {path:"/home", element:   <HomePage />},
-  //   {path:"/home", element:   <JobDetails />},
-  //   {path:"/home", element:   <ProfilePage />},
-  // ])
+  const router = createBrowserRouter ([
+    {path:"/", element:   <AppLayout />},
+    {path:"/profile-details", element:   <ProfileDetailsPage />},
+    {path:"/jobs-details", element:   <JobsDetailsPAge />},
+  
+  ])
   return (
 
 
     <div className="App">
-      {/* <RouterProvider router={router}/> */}
-      <AppLayout />
-      <HomePage />
+      <RouterProvider router={router}/>
     </div>
   );
 }
