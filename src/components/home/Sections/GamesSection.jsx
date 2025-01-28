@@ -1,80 +1,100 @@
 import React from "react";
-import { Card, CardContent, Typography, Avatar, Box, } from "@mui/material";
+import { Card, CardContent, Typography, Avatar, Box } from "@mui/material";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Image1 from '../../assets/who-hiring.png'
+import Image1 from "../../assets/who-hiring.png";
+import { Link } from "react-router-dom";
 
 const GamesSection = () => {
-  const games = [
-    { title: "Tango", description: "Harmonize the grid", color: "#fbbc05" },
-    { title: "Queens", description: "Crown each region", color: "#34a853" },
-    { title: "Pinpoint", description: "Guess the category", color: "#4285f4" },
-    { title: "Crossclimb", description: "Unlock a trivia ladder", color: "#ea4335" },
-  ];
-
   return (
-    <Box sx={{ width: "300px", margin: "0 auto" }}>
-      {/* Puzzle Games Section */}
-      <Card sx={{ borderRadius: "12px", boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", marginBottom: 2 }}>
+    <Box>
+      <Card className="mb-3">
         <CardContent>
-          <Typography variant="h6" sx={{ fontWeight: "bold", marginBottom: 2 }}>
+          <Typography variant="h6" className="fw-bold">
             Today's puzzle games
           </Typography>
-          {games.map((game, index) => (
-            <Box
-              key={index}
-              className="d-flex justify-content-between align-items-center mb-3"
-              sx={{ padding: "8px 0" }}
-            >
-              <Avatar
-                sx={{ backgroundColor: game.color, width: 30, height: 30, marginRight: 2 }}
-              ></Avatar>
-              <Box sx={{ flexGrow: 1 }}>
-                <Typography variant="body1" sx={{ fontWeight: "bold" }}>
-                  {game.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {game.description}
-                </Typography>
-              </Box>
+          <Box className="d-flex align-items-center my-4">
+            <Avatar
+              sx={{
+                width: 30,
+                height: 30,
+                marginRight: 2,
+                backgroundColor: "#fbbc05",
+              }}
+            />
+            <Box>
+              <Typography variant="body2" className="fw-bold">
+                Tango
+              </Typography>
+              <Typography variant="body2">Harmonize the grid</Typography>
             </Box>
-          ))}
+          </Box>
+          <Box className="d-flex align-items-center">
+            <Avatar
+              sx={{
+                width: 30,
+                height: 30,
+                marginRight: 2,
+                backgroundColor: "#34a853",
+              }}
+            />
+            <Box>
+              <Typography variant="body2" className="fw-bold">
+                Queens
+              </Typography>
+              <Typography variant="body2">Crown each region</Typography>
+            </Box>
+          </Box>
+          <Box className="d-flex align-items-center my-4">
+            <Avatar
+              sx={{
+                width: 30,
+                height: 30,
+                marginRight: 2,
+                backgroundColor: "#4285f4",
+              }}
+            />
+            <Box>
+              <Typography variant="body2" className="fw-bold">
+                Pinpoint
+              </Typography>
+              <Typography variant="body2">Guess the category</Typography>
+            </Box>
+          </Box>
+          <Box className="d-flex align-items-center">
+            <Avatar
+              sx={{
+                width: 30,
+                height: 30,
+                marginRight: 2,
+                backgroundColor: "#ea4335",
+              }}
+            />
+            <Box>
+              <Typography variant="body2" className="fw-bold">
+                Crossclimb
+              </Typography>
+              <Typography variant="body2">Unlock a trivia ladder</Typography>
+            </Box>
+          </Box>
         </CardContent>
       </Card>
-
       {/* Hiring Section */}
       <Box>
-          <img className="w-100 rounded-2"
-            src={Image1} alt="Hiring" />
+        <img className="w-100 rounded-2" src={Image1} alt="Hiring" />
       </Box>
-
-      {/* Footer Links */}
-      <Box sx={{ textAlign: "center", marginTop: 2 }}>
+      <Box className="text-center mt-4">
         <Typography
           variant="body2"
           color="text.secondary"
           className="d-flex flex-wrap justify-content-center gap-2"
-          sx={{ fontSize: "12px", lineHeight: 1.5 }}
         >
-          {[
-            "About",
-            "Accessibility",
-            "Help Center",
-            "Privacy & Terms",
-            "Ad Choices",
-            "Advertising",
-            "Business Services",
-            "Get the LinkedIn app",
-            "More",
-          ].map((link, index) => (
-            <span key={index} style={{ cursor: "pointer", color: "#0077b5" }}>
-              {link}
-            </span>
-          ))}
+          <Link>About</Link> <Link>Accessibility</Link> <Link>Help Center</Link>
+          <Link>Privacy & Terms</Link> <Link>Ad Choices</Link>{" "}
+          <Link>Advertising</Link>
+          <Link>Business Services</Link> <Link>Get the LinkedIn app</Link>{" "}
+          <Link>More</Link>
         </Typography>
-        <Typography
-          variant="caption"
-          sx={{ marginTop: 1, display: "block", fontSize: "10px", color: "text.secondary" }}
-        >
+        <Typography variant="body2" className="mt-4 text-secondary">
           LinkedIn Corporation © 2025
         </Typography>
       </Box>
