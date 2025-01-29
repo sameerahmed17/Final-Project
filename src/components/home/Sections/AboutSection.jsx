@@ -2,32 +2,38 @@ import React from "react";
 import { Avatar, Box, Card, Typography } from "@mui/material";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import ProfileLogo from "../../assets/unnamed.jpg";
+import BgCover from '../../assets/syed ommer.jpeg'
 
 const AboutSection = () => {
   return (
-    <Card
+    <>
+        <Card
       className="rounded-3 overflow-hidden"
       sx={{
         boxShadow: "0 0 5px rgba(0, 0, 0, 0.1)",
       }}
     >
+    
       <Box
-        className="d-flex justify-content-center align-items-center text-white"
-        sx={{
-          height: "100px",
-          backgroundColor: "#333",
-        }}
-      >
-        <Typography variant="body1" sx={{ fontSize: "11px" }}>
-          LOGIC MAKES WEBSITES SHINE BRIGHTER
-        </Typography>
-      </Box>
-      <Box
-        className="position-relative"
-        sx={{
-          marginTop: "-40px",
-        }}
-      >
+          sx={{
+            height: "100px",
+            backgroundColor: "#ddd",
+            backgroundImage: `url(${BgCover})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></Box>
+        
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            padding: "16px 0",
+            marginTop: "-50px",
+          }}
+        >
+
         <Avatar src={ProfileLogo} alt="Profile" className="m-auto h-75 w-25" />
         <Typography variant="h6" className="mt-1 fw-bold text-center">
           Sameer Ahmed
@@ -66,6 +72,7 @@ const AboutSection = () => {
         </Box>
       </Card>
     </Card>
+    </>
   );
 };
 

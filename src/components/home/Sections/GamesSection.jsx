@@ -79,9 +79,9 @@ const GamesSection = () => {
         </CardContent>
       </Card>
       {/* Hiring Section */}
-      <Box>
+      <Box  style={{ position: "sticky", top: "0", height: "100vh" }}>
         <img className="w-100 rounded-2" src={Image1} alt="Hiring" />
-      </Box>
+ 
       <Box className="text-center mt-4">
         <Typography
           variant="body2"
@@ -97,6 +97,7 @@ const GamesSection = () => {
         <Typography variant="body2" className="mt-4 text-secondary">
           LinkedIn Corporation © 2025
         </Typography>
+      </Box>
       </Box>
     </Box>
   );
