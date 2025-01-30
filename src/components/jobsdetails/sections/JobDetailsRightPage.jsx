@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, Typography, List, ListItem, Button, Box, Avatar, AvatarGroup, } from "@mui/material";
 import { Close } from "@mui/icons-material";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import MyProfile from "../../assets/Sameer Ahmed.jpeg";
 import JobsImg1 from "../../assets/spiralyze_logo.jpeg";
 import JobSimg2 from '../../assets/wizdaa_logo.jpeg'
@@ -15,6 +16,16 @@ import JobsImg10 from '../../assets/soum_sa_logo.jpeg'
 import JobsImg11 from '../../assets/motive_inc_logo.jpeg'
 import JobsImg12 from '../../assets/contoursoftware_logo.jpeg'
 import JobsImg13 from '../../assets/reliabilityacademy_logo.jpeg'
+import JobsImg14 from '../../assets/afiniti_com_logo.jpeg'
+import JobsImg15 from '../../assets/tekrevol_logo.jpeg'
+import JobsImg16 from '../../assets/nymcard_logo.jpeg'
+import JobsImg17 from '../../assets/kalpayfinancials_logo.jpeg'
+import JobsImg18 from '../../assets/veripark_logo.jpeg'
+import JobsImg19 from '../../assets/azure.jpeg'
+import JobsImg20 from '../../assets/solutioninn_logo.jpeg'
+import ProfileLogo from "../../assets/unnamed.jpg";
+import Avatar1 from "../../assets/syed ommer.jpeg";
+import Avatar2 from "../../assets/mudassir.png";
 
 const JobDetailsRightPage = () => {
   return (
@@ -84,7 +95,7 @@ const JobDetailsRightPage = () => {
         <hr />
         <Box className="d-flex justify-content-center">
           <Button variant="outlined" className="fw-bold">
-            Show all →
+            Show all <ArrowForwardIcon />
           </Button>
         </Box>
       </Card>
@@ -148,9 +159,9 @@ const JobDetailsRightPage = () => {
                   justifyContent: "flex-start",
                 }}
               >
-                <Avatar alt="Sameer" src="/static/images/avatar/1.jpg" />
-                <Avatar alt="Tabish" src="/static/images/avatar/2.jpg" />
-                <Avatar alt="Kashif" src="/static/images/avatar/3.jpg" />
+                <Avatar alt="Sameer" src={ProfileLogo} />
+                <Avatar alt="Tabish" src={Avatar1} />
+                <Avatar alt="Kashif" src={Avatar2} />
               </AvatarGroup>
             </Box>
             <Button size="small" variant="outlined">
@@ -192,7 +203,7 @@ const JobDetailsRightPage = () => {
           <hr />
           <Box className="d-flex justify-content-center">
             <Button variant="outlined" className="fw-bold">
-              Show all →
+              Show all <ArrowForwardIcon />
             </Button>
           </Box>
         </Box>
@@ -224,17 +235,17 @@ const JobDetailsRightPage = () => {
                 Karachi Division, Sindh, Pakistan (On-site)
               </Typography>
               <Box sx={{ display: "flex", justifyContent: "flex-start", mb: 1 }}>
-                <AvatarGroup
-                  spacing="26"
-                  sx={{
-                    justifyContent: "flex-start",
-                  }}
-                >
-                  <Avatar alt="Sameer" src="/static/images/avatar/1.jpg" />
-                  <Avatar alt="Tabish" src="/static/images/avatar/2.jpg" />
-                  <Avatar alt="Kashif" src="/static/images/avatar/3.jpg" />
-                </AvatarGroup>
-              </Box>
+              <AvatarGroup
+                spacing="26"
+                sx={{
+                  justifyContent: "flex-start",
+                }}
+              >
+                <Avatar alt="Kashif" src={Avatar2} />
+                <Avatar alt="Sameer" src={ProfileLogo} />
+                <Avatar alt="Tabish" src={Avatar1} />
+              </AvatarGroup>
+            </Box>
               <Typography
                 variant="caption"
                 style={{ color: "#888", marginTop: "4px" }}
@@ -272,17 +283,17 @@ const JobDetailsRightPage = () => {
                 Karāchi, Sindh, Pakistan (On-site)
               </Typography>
               <Box sx={{ display: "flex", justifyContent: "flex-start", mb: 1 }}>
-                <AvatarGroup
-                  spacing="26"
-                  sx={{
-                    justifyContent: "flex-start",
-                  }}
-                >
-                  <Avatar alt="Sameer" src="/static/images/avatar/1.jpg" />
-                  <Avatar alt="Tabish" src="/static/images/avatar/2.jpg" />
-                  <Avatar alt="Kashif" src="/static/images/avatar/3.jpg" />
-                </AvatarGroup>
-              </Box>
+              <AvatarGroup
+                spacing="26"
+                sx={{
+                  justifyContent: "flex-start",
+                }}
+              >
+                <Avatar alt="Tabish" src={Avatar1} />
+                <Avatar alt="Kashif" src={Avatar2} />
+                <Avatar alt="Sameer" src={ProfileLogo} />
+              </AvatarGroup>
+            </Box>
               <Typography
                 variant="caption"
                 style={{ color: "#888", marginTop: "4px" }}
@@ -320,17 +331,17 @@ const JobDetailsRightPage = () => {
                 Islamabad, Islāmābād, Pakistan (On-site)
               </Typography>
               <Box sx={{ display: "flex", justifyContent: "flex-start", mb: 1 }}>
-                <AvatarGroup
-                  spacing="26"
-                  sx={{
-                    justifyContent: "flex-start",
-                  }}
-                >
-                  <Avatar alt="Sameer" src="/static/images/avatar/1.jpg" />
-                  <Avatar alt="Tabish" src="/static/images/avatar/2.jpg" />
-                  <Avatar alt="Kashif" src="/static/images/avatar/3.jpg" />
-                </AvatarGroup>
-              </Box>
+              <AvatarGroup
+                spacing="26"
+                sx={{
+                  justifyContent: "flex-start",
+                }}
+              >
+                <Avatar alt="Sameer" src={ProfileLogo} />
+                <Avatar alt="Tabish" src={Avatar1} />
+                <Avatar alt="Kashif" src={Avatar2} />
+              </AvatarGroup>
+            </Box>
               <Typography
                 variant="caption"
                 style={{ color: "#888", marginTop: "4px" }}
@@ -352,7 +363,7 @@ const JobDetailsRightPage = () => {
           <hr />
           <Box className="d-flex justify-content-center">
             <Button variant="outlined" className="fw-bold">
-              Show all →
+              Show all <ArrowForwardIcon />
             </Button>
           </Box>
         </CardContent>
@@ -657,7 +668,6 @@ const JobDetailsRightPage = () => {
             ✖
           </Button>
         </Box>
-
         <hr />
         <Box className="d-flex align-items-start mb-4">
           <Box className='me-3'>
@@ -681,6 +691,262 @@ const JobDetailsRightPage = () => {
               style={{ color: "#888", marginTop: "4px" }}
             >
               Promoted
+            </Typography>
+          </Box>
+          <Button
+            size="small"
+            style={{
+              color: "#555",
+              textTransform: "none",
+              marginLeft: "auto", // Push the button to the end
+            }}
+          >
+            ✖
+          </Button>
+        </Box>
+        <hr />
+        <Box className="d-flex align-items-start mb-4">
+          <Box className='me-3'>
+            <img width='60' src={JobsImg14}alt="" />
+          </Box>
+          <Box>
+            <Typography
+              variant="body1"
+              style={{ fontWeight: "bold", color: "#0073b1" }}
+            >
+              Lead Sharepoint and MS365 Engineer
+            </Typography>
+            <Typography variant="body2" style={{ color: "#555" }}>
+            Afiniti · Karachi Division, Sindh, Pakistan (Hybrid)
+            </Typography>
+            <Typography variant="body2" style={{ color: "#777" }}>
+            Karachi Division, Sindh, Pakistan (Hybrid)
+            </Typography>
+            <Typography
+              variant="caption"
+              style={{ color: "#888", marginTop: "4px" }}
+            >
+              Promoted
+            </Typography>
+          </Box>
+          <Button
+            size="small"
+            style={{
+              color: "#555",
+              textTransform: "none",
+              marginLeft: "auto", // Push the button to the end
+            }}
+          >
+            ✖
+          </Button>
+        </Box>
+        <hr />
+        <Box className="d-flex align-items-start mb-4">
+          <Box className='me-3'>
+            <img width='60' src={JobsImg15}alt="" />
+          </Box>
+          <Box>
+            <Typography
+              variant="body1"
+              style={{ fontWeight: "bold", color: "#0073b1" }}
+            >
+             
+React Native Developer
+            </Typography>
+            <Typography variant="body2" style={{ color: "#555" }}>
+            TekRevol · Karāchi, Sindh, Pakistan (On-site)
+            </Typography>
+            <Typography variant="body2" style={{ color: "#777" }}>
+            Karāchi, Sindh, Pakistan (On-site)
+            </Typography>
+            <Typography
+              variant="caption"
+              style={{ color: "#888", marginTop: "4px" }}
+            >
+             
+1 connection works here Viewed Easy Apply
+            </Typography>
+          </Box>
+          <Button
+            size="small"
+            style={{
+              color: "#555",
+              textTransform: "none",
+              marginLeft: "auto", // Push the button to the end
+            }}
+          >
+            ✖
+          </Button>
+        </Box>
+        <hr />
+        <Box className="d-flex align-items-start mb-4">
+          <Box className='me-3'>
+            <img width='60' src={JobsImg16}alt="" />
+          </Box>
+          <Box>
+            <Typography
+              variant="body1"
+              style={{ fontWeight: "bold", color: "#0073b1" }}
+            >
+             Android Developer
+            </Typography>
+            <Typography variant="body2" style={{ color: "#555" }}>
+            NymCard · Karāchi, Sindh, Pakistan (On-site)
+            </Typography>
+            <Typography variant="body2" style={{ color: "#777" }}>
+            Karāchi, Sindh, Pakistan (On-site)
+            </Typography>
+            <Typography
+              variant="caption"
+              style={{ color: "#888", marginTop: "4px" }}
+            >
+             3 months ago
+            </Typography>
+          </Box>
+          <Button
+            size="small"
+            style={{
+              color: "#555",
+              textTransform: "none",
+              marginLeft: "auto", // Push the button to the end
+            }}
+          >
+            ✖
+          </Button>
+        </Box>
+        <hr />
+        <Box className="d-flex align-items-start mb-4">
+          <Box className='me-3'>
+            <img width='60' src={JobsImg17}alt="" />
+          </Box>
+          <Box>
+            <Typography
+              variant="body1"
+              style={{ fontWeight: "bold", color: "#0073b1" }}
+            >
+             
+Senior Blockchain Developer
+            </Typography>
+            <Typography variant="body2" style={{ color: "#555" }}>
+            KalPay · Lahore, Punjab, Pakistan (Hybrid)
+            </Typography>
+            <Typography variant="body2" style={{ color: "#777" }}>
+            Lahore, Punjab, Pakistan (Hybrid)
+            </Typography>
+            <Typography
+              variant="caption"
+              style={{ color: "#888", marginTop: "4px" }}
+            >
+             Applicant review time is typically 1 day 2 weeks ago Easy Apply
+            </Typography>
+          </Box>
+          <Button
+            size="small"
+            style={{
+              color: "#555",
+              textTransform: "none",
+              marginLeft: "auto", // Push the button to the end
+            }}
+          >
+            ✖
+          </Button>
+        </Box>
+        <hr />
+        <Box className="d-flex align-items-start mb-4">
+          <Box className='me-3'>
+            <img width='60' src={JobsImg18}alt="" />
+          </Box>
+          <Box>
+            <Typography
+              variant="body1"
+              style={{ fontWeight: "bold", color: "#0073b1" }}
+            >
+             Senior Software Developer .NET + Angular
+            </Typography>
+            <Typography variant="body2" style={{ color: "#555" }}>
+            VeriPark · Pakistan (Remote)
+            </Typography>
+            <Typography variant="body2" style={{ color: "#777" }}>
+          Pakistan (On-site)
+            </Typography>
+            <Typography
+              variant="caption"
+              style={{ color: "#888", marginTop: "4px" }}
+            >
+             Promoted
+            </Typography>
+          </Box>
+          <Button
+            size="small"
+            style={{
+              color: "#555",
+              textTransform: "none",
+              marginLeft: "auto", // Push the button to the end
+            }}
+          >
+            ✖
+          </Button>
+        </Box>
+        <hr />
+        <Box className="d-flex align-items-start mb-4">
+          <Box className='me-3'>
+            <img width='60' src={JobsImg19}alt="" />
+          </Box>
+          <Box>
+            <Typography
+              variant="body1"
+              style={{ fontWeight: "bold", color: "#0073b1" }}
+            >Software EngineerFULL TIME
+            </Typography>
+            <Typography variant="body2" style={{ color: "#555" }}>
+            SolutionInn · Lahore, Punjab, Pakistan (On-site)
+            </Typography>
+            <Typography variant="body2" style={{ color: "#777" }}>
+            Lahore, Punjab, Pakistan (On-site)
+            </Typography>
+            <Typography
+              variant="caption"
+              style={{ color: "#888", marginTop: "4px" }}
+            >
+           Viewed
+            </Typography>
+          </Box>
+          <Button
+            size="small"
+            style={{
+              color: "#555",
+              textTransform: "none",
+              marginLeft: "auto", // Push the button to the end
+            }}
+          >
+            ✖
+          </Button>
+        </Box>
+        <hr />
+        <Box className="d-flex align-items-start mb-4">
+          <Box className='me-3'>
+            <img width='60' src={JobsImg20}alt="" />
+          </Box>
+          <Box>
+            <Typography
+              variant="body1"
+              style={{ fontWeight: "bold", color: "#0073b1" }}
+            >
+             
+React Native Developer
+            </Typography>
+            <Typography variant="body2" style={{ color: "#555" }}>
+            TekRevol · Karāchi, Sindh, Pakistan (On-site)
+            </Typography>
+            <Typography variant="body2" style={{ color: "#777" }}>
+            Karāchi, Sindh, Pakistan (On-site)
+            </Typography>
+            <Typography
+              variant="caption"
+              style={{ color: "#888", marginTop: "4px" }}
+            >
+             
+1 connection works here Viewed Easy Apply
             </Typography>
           </Box>
           <Button

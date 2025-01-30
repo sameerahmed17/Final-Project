@@ -8,20 +8,43 @@ import { Box, Container } from "@mui/material";
 const HomePage = () => {
   return (
     <Box style={{ backgroundColor: "#f4f2ee" }}>
-      <Container className=" mt-4">
+      <Container className="mt-4">
         <Row className="gy-4">
-          {/* AboutSection */}
-          <Col lg={3} className="d-none d-lg-block">
+          {/* About Section */}
+          <Col
+            lg={3}
+            className="d-none d-lg-block"
+            style={{
+              position: "sticky", 
+              top: "0", 
+              height: "100vh", 
+              overflow: "hidden", 
+            }}
+          >
             <AboutSection />
           </Col>
 
           {/* Post Section */}
-          <Col lg={6}>
+          <Col
+            lg={6}
+            style={{
+              position: "relative", 
+            }}
+          >
             <PostSection />
           </Col>
 
           {/* Games Section */}
-          <Col lg={3} className="d-none d-lg-block">
+          <Col
+            lg={3}
+            className="d-none d-lg-block"
+            style={{
+              position: "sticky", 
+              top: "0", 
+              height: "100vh", 
+              overflow: "hidden", 
+            }}
+          >
             <GamesSection />
           </Col>
         </Row>

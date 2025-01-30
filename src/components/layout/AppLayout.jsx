@@ -96,10 +96,13 @@ export default function AppLayout() {
                 flexGrow: 1,
               }}
             >
-              <Box className="d-flex flex-column align-items-center">
-                <IconButton size="large" color="inherit">
+            
+             <Box className="d-flex flex-column align-items-center">
+             <Link to='/'>
+                <IconButton size="large" className="text-black" color="inherit">
                   <HomeIcon />
                 </IconButton>
+                </Link>
                 <Typography variant="body1" sx={{ fontSize: "12px" }}>
                   Home
                 </Typography>
@@ -114,7 +117,7 @@ export default function AppLayout() {
               </Box>
               <Box className="d-flex flex-column align-items-center">
                 <Link to="/jobs-details">
-                  <IconButton size="large">
+                  <IconButton className="text-black" size="large">
                     <WorkIcon />
                   </IconButton>
                 </Link>

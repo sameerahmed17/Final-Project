@@ -2,7 +2,7 @@ import React from "react";
 import { Avatar, Box, Card, Typography } from "@mui/material";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import ProfileLogo from "../../assets/unnamed.jpg";
-import BgCover from '../../assets/syed ommer.jpeg'
+import BgCover from '../../assets/Banner.png'
 
 const AboutSection = () => {
   return (
