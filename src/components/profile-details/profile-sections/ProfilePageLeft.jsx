@@ -105,7 +105,7 @@ const ProfilePageLeft = () => {
             </Paper>
             <Card className="my-3 rounded-3 shadow px-3 py-4">
                 <Typography className="mb-3" variant="h5">About</Typography>
-                <Typography variant="body1">I’m currently enrolled in a 12-month Frontend Web Development course at xWave, a program that helps empower Pakistan’s youth with IT skills. I’m skilled in HTML, CSS, Bootstrap5, JavaScript, and React.js, and have completed 4+ projects, including websites and landing pages. <br /> <br />
+                <Typography variant="body2">I’m currently enrolled in a 12-month Frontend Web Development course at xWave, a program that helps empower Pakistan’s youth with IT skills. I’m skilled in HTML, CSS, Bootstrap5, JavaScript, and React.js, and have completed 4+ projects, including websites and landing pages. <br /> <br />
 
                     I also completed an internship at Prodigy Info Tech, where I developed 4 projects, a stopwatch, weather app, Tic Tac Toe app, and personal portfolio, using HTML5, CSS3, and JavaScript. These experiences helped me apply my skills in real-world projects. <br /> <br />
 

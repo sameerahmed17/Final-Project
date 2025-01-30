@@ -1,8 +1,8 @@
 import { Box, Container } from '@mui/material'
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
-import GamesSection from '../home/Sections/GamesSection'
 import ProfilePageLeft from './profile-sections/ProfilePageLeft'
+import ProfilePageRight from './profile-sections/ProfilePageRight'
 
 const ProfileDetailsPage = () => {
   return (
@@ -15,7 +15,7 @@ const ProfileDetailsPage = () => {
             <ProfilePageLeft />
           </Col>
           <Col lg={3} className="d-none d-lg-block">
-            <GamesSection />
+            <ProfilePageRight />
           </Col>
         </Row>
       </Container>
