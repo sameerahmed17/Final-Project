@@ -10,18 +10,21 @@ import HomePage from './components/home/HomePage';
 
 function App() {
   const router = createBrowserRouter([
-    {  path: "/", element:  <AppLayout />,
-      children:[{
-        path:'',
-        element: <HomePage />, },
-      {path:"/profile-details", element:   <ProfileDetailsPage />},
-    {path:"/jobs-details", element:   <JobsDetailsPAge />},
-      ], },
-    
+    {
+      path: "/", element: <AppLayout />,
+      children: [{
+        path: '',
+        element: <HomePage />,
+      },
+      { path: "/profile-details", element: <ProfileDetailsPage /> },
+      { path: "/jobs-details", element: <JobsDetailsPAge /> },
+      ],
+    },
+
   ]);
   return (
     <div className="App">
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </div>
   );
 }

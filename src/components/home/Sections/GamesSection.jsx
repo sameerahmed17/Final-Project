@@ -89,9 +89,9 @@ const GamesSection = () => {
           className="d-flex flex-wrap justify-content-center gap-2"
         >
           <Link>About</Link> <Link>Accessibility</Link> <Link>Help Center</Link>
-          <Link>Privacy & Terms</Link> <Link>Ad Choices</Link>{" "}
+          <Link>Privacy & Terms</Link> <Link>Ad Choices</Link>
           <Link>Advertising</Link>
-          <Link>Business Services</Link> <Link>Get the LinkedIn app</Link>{" "}
+          <Link>Business Services</Link> <Link>Get the LinkedIn app</Link>
           <Link>More</Link>
         </Typography>
         <Typography variant="body2" className="mt-4 text-secondary">

@@ -3,6 +3,7 @@ import { Avatar, Box, Card, Typography } from "@mui/material";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import ProfileLogo from "../../assets/unnamed.jpg";
 import BgCover from '../../assets/Banner.png'
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
@@ -35,9 +36,11 @@ const AboutSection = () => {
         >
 
         <Avatar src={ProfileLogo} alt="Profile" className="m-auto h-75 w-25" />
-        <Typography variant="h6" className="mt-1 fw-bold text-center">
+        <Link to='/profile-details' style={{ textDecoration: 'none' }}>
+        <Typography variant="h6" className="mt-1 fw-bold text-center text-black">
           Sameer Ahmed
         </Typography>
+        </Link>
         <Typography variant="body2" className="text-center px-3">
           Frontend Web Developer || HTML5 || CSS3 || Bootstrap || JavaScript ||
           React.js || Next.js

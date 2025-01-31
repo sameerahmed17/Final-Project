@@ -30,12 +30,9 @@ import Logo10 from "../../assets/mudassir profile logo.jpeg";
 
 const PostSection = () => {
   const [open, setOpen] = useState(false);
-
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  const posts = [
-    {
+  const [newPostContent, setNewPostContent] = useState("");
+  const [postData, setPostData] = useState([
+     {
       id: 1,
       name: "Wardah Noor",
       role: "Upskilling & Empowering youth via tech skills | LUMS'24 | Acumen Fellow'23",
@@ -125,7 +122,31 @@ const PostSection = () => {
       avatar: Logo10,
       image: Image10,
     },
-  ];
+  ]);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => {
+    setOpen(false);
+    setNewPostContent("");
+  };
+
+  const handlePost = () => {
+    if (newPostContent.trim() === "") return;
+
+    const newPost = {
+      id: postData.length + 1,
+      name: "Sameer Ahmed",
+      role: "Front-End Web Developer | React.js | Next.js",
+      content: newPostContent,
+      avatar: ProfileLogo,
+    };
+
+    setPostData([newPost, ...postData]);
+    handleClose();
+  };
+  // const postData = [
+   
+  // ];
 
   return (
     <Box>
@@ -167,7 +188,7 @@ const PostSection = () => {
         </Box>
       </Box>
       <hr />
-      {posts.map((post) => (
+      {postData.map((post) => (
         <Card key={post.id} className="mb-3 p-3 rounded-3">
           <Box className="d-flex align-items-center">
             <Avatar src={post.avatar} alt="User" className="me-2" />
@@ -206,14 +227,8 @@ const PostSection = () => {
         </Card>
       ))}
       {/* Modal */}
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-title"
-        aria-describedby="modal-description"
-      >
-        <Box
-          className="position-absolute top-50 start-50 translate-middle bg-white shadow-lg p-4 rounded"
+      <Modal open={open} onClose={handleClose} aria-labelledby="modal-title">
+        <Box className="position-absolute top-50 start-50 translate-middle bg-white shadow-lg p-4 rounded"
           style={{ width: "90%", maxWidth: "800px", maxHeight: "90vh", overflowY: "auto" }}
         >
           <Typography id="modal-title" variant="h6" component="h2">
@@ -226,19 +241,12 @@ const PostSection = () => {
             placeholder="What do you want to talk about?"
             variant="outlined"
             className="mt-2"
+            value={newPostContent}
+            onChange={(e) => setNewPostContent(e.target.value)}
           />
           <Box className="d-flex justify-content-end mt-3">
-            <Button variant="outlined" color="secondary" onClick={handleClose}>
-              Cancel
-            </Button>
-            <Button
-              variant="contained"
-              color="primary"
-              className="ms-3"
-              onClick={handleClose}
-            >
-              Post
-            </Button>
+            <Button variant="outlined" color="secondary" onClick={handleClose}>Cancel</Button>
+            <Button variant="contained" color="primary" className="ms-3" onClick={handlePost}>Post</Button>
           </Box>
         </Box>
       </Modal>
