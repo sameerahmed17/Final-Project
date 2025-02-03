@@ -32,7 +32,7 @@ const PostSection = () => {
   const [open, setOpen] = useState(false);
   const [newPostContent, setNewPostContent] = useState("");
   const [postData, setPostData] = useState([
-     {
+    {
       id: 1,
       name: "Wardah Noor",
       role: "Upskilling & Empowering youth via tech skills | LUMS'24 | Acumen Fellow'23",
@@ -109,7 +109,7 @@ const PostSection = () => {
       name: "Abeera Khan",
       role: "Developing Solutions Scholar | MA Educational Leadership and Management | Educator | Professional Development Services",
       content:
-        "Join us for an enlightening webinar hosted by the Jatan Foundation. 𝐀𝐛𝐨𝐮𝐭 𝐭𝐡𝐞 𝐒𝐩𝐞𝐚𝐤𝐞𝐫 & 𝐓𝐨𝐩𝐢𝐜: We are excited to welcome Miss Maha a seasoned Clinical Psychologist and dedicated mental health advocate, to our webinar, Behind Closed Doors: Strategies for Overcoming Silent Struggles & Seeking Help. With a focus on youth problems, Maha has shared her expertise at esteemed institutions like the University of Central Punjab and conducted impactful sessions at schools including Al Khidmat foundation, City School and Punjab University. Her passion for engaging with youth and her role as a social activist enrich her perspective on mental well-being. Join us for a transformative session where Miss Maha will share invaluable strategies and insights to empower individuals facing silent struggles. Don't miss this opportunity to gain expert guidance on overcoming challenges and seeking help. So join us for an enlightening session on: 🗓️ Date: 23rd October 🕒 Time: 8pm-9pm 📍 Venue: Google Meet",
+        "Join us for an enlightening webinar hosted by the Jatan Foundation. 𝐀𝐛𝐨𝐮𝐭 𝐭𝐡𝐞 𝐒𝐩𝐞𝐚𝐤𝐞𝐫 & 𝐓𝐨𝐩𝐢𝐜: We are excited to welcome Miss Maha a seasoned Clinical Psychologist and dedicated mental health advocate, to our webinar, Behind Closed Doors: Strategies for Overcoming Silent Struggles & Seeking Help. With a focus on youth problems, Maha has shared her expertise at esteemed institutions like the University of Central Punjab and conducted impactful sessions at schools including Al Khidmat foundation, City School and Punjab University. Her passion for engaging with youth and her role as a social activist enrich her perspective on mental well-being. Join us for a transformative session where Miss Maha will share invaluable strategies and insights to empower individuals facing silent struggles. Don't miss this opportunity to gain expert guidance on overcoming challenges and seeking help. So join us for an enlightening session on: 🗓 Date: 23rd October 🕒 Time: 8pm-9pm 📍 Venue: Google Meet",
       avatar: Logo9,
       image: Image9,
     },
@@ -144,9 +144,7 @@ const PostSection = () => {
     setPostData([newPost, ...postData]);
     handleClose();
   };
-  // const postData = [
-   
-  // ];
+
 
   return (
     <Box>
