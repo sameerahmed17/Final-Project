@@ -3,6 +3,7 @@ import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import ProfilePageLeft from './profile-sections/ProfilePageLeft'
 import ProfilePageRight from './profile-sections/ProfilePageRight'
+import Footer from './profile-sections/Footer'
 
 const ProfileDetailsPage = () => {
   return (
@@ -18,6 +19,7 @@ const ProfileDetailsPage = () => {
             <ProfilePageRight />
           </Col>
         </Row>
+        <Footer />
       </Container>
     </Box>
   )

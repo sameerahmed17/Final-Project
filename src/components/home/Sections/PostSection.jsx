@@ -8,6 +8,9 @@ import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import CommentIcon from "@mui/icons-material/Comment";
 import ShareIcon from "@mui/icons-material/Share";
 import ProfileLogo from "../../assets/unnamed.jpg";
+import VideoCallIcon from "@mui/icons-material/VideoCall";
+import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
+import ArticleIcon from "@mui/icons-material/Article";
 
 const PostSection = () => {
   const dispatch = useDispatch();
@@ -54,9 +57,10 @@ const PostSection = () => {
     handleClose();
   };
 
+
   return (
     <Box>
-      <Box className="p-3 border-black rounded-2 d-flex flex-column gap-2 bg-white">
+      <Box className="p-3 rounded-2 d-flex flex-column gap-2 bg-white">
         <Box className="d-flex align-items-center gap-2">
           <Avatar src={ProfileLogo} alt="Sameer Ahmed" />
           <TextField
@@ -66,6 +70,11 @@ const PostSection = () => {
             onClick={handleOpen}
             sx={{ "& .MuiOutlinedInput-root": { borderRadius: 8 } }}
           />
+        </Box>
+        <Box className="d-flex flex-wrap justify-content-evenly">
+          <Button color="black" startIcon={<VideoCallIcon style={{ color: "green" }} />}>Video</Button>
+          <Button color="black" startIcon={<PhotoCameraIcon style={{ color: "blue" }} />}>Photo</Button>
+          <Button color="black" startIcon={<ArticleIcon style={{ color: "orange" }} />}>Write article</Button>
         </Box>
       </Box>
       <hr />

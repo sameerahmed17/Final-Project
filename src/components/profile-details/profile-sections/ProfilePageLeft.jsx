@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Grid, Paper, Avatar, Button, Typography, Box, Card, TextField, IconButton, Tabs, Tab, FormControl, Select, MenuItem, } from "@mui/material";
+import { Container, Grid, Paper, Avatar, Button, Typography, Box, Card, TextField, IconButton, Tabs, Tab, } from "@mui/material";
 import BgCover from '../../assets/Banner.png';
 import MyProfile from "../../assets/Sameer Ahmed.jpeg";
 import xWaveLogo from '../../assets/xwavepak_logo.jpeg';
@@ -28,9 +28,6 @@ import PostImg2 from '../../assets/post-img-two.jpeg'
 import PostImg3 from '../../assets/post-img-three.jpeg'
 import Ibex from '../../assets/ibex.jpeg';
 import LinkedIn from '../../assets/linkedin_logo.jpeg'
-import HelpIcon from "@mui/icons-material/Help";
-import SettingsIcon from "@mui/icons-material/Settings";
-import SecurityIcon from "@mui/icons-material/Security";
 
 
 
@@ -558,138 +555,28 @@ const ProfilePageLeft = () => {
                 </Card>
                 {/* Interests */}
                 <Card className="my-3 rounded-3 shadow px-4 py-4">
-                    <Box>
-                        <Typography variant="h5" className="fw-bold">Interests</Typography>
-                    </Box>
-                    <Tabs value={tabValue} onChange={(e, newValue) => setTabValue(newValue)} variant="scrollable" scrollButtons="auto">
-                        <Tab label="Companies" />
-                        <Tab label="Groups" />
-                        <Tab label="Newsletters" />
-                    </Tabs>
-                    <Box mt={3}>
-                        {tabValue === 0 && (
-                            <>
-                                <Box className='d-flex flex-wrap'>
-                                    <Box className='d-flex my-4 me-5'>
-                                        <Box> <img width='60' src={LinkedIn} alt="" /></Box>
-                                        <Box className='ms-3'>
-                                            <Typography variant="body1" className="fw-bold">LinkedIn</Typography>
-                                            <Typography variant="body2" className="text-secondary">29,834,319 followers</Typography>
-                                            <Button variant="outlined">Following</Button>
-                                        </Box>
-                                    </Box>
-                                    <Box className='d-flex my-4'>
-                                        <Box> <img width='60' src={Ibex} alt="" /></Box>
-                                        <Box className='ms-3'>
-                                            <Typography variant="body1" className="fw-bold">ibex</Typography>
-                                            <Typography variant="body2" className="text-secondary">316,743 followers</Typography>
-                                            <Button variant="outlined">Following</Button>
-                                        </Box>
-                                    </Box>
-                                </Box>
-                            </>
-                        )}
-                        {tabValue === 1 && <Typography variant="h6">
-                            <>
-                                <Box>
-                                    <Typography variant="body1"> Time Management</Typography>
-                                </Box>
-                                <hr />
-                                <Box>
-                                    <Typography variant="body1"> Front-End Design</Typography>
-                                </Box>
-                            </>
-                        </Typography>}
-                        {tabValue === 2 && <Typography variant="h6" >
-                            <>
-                                <Box>
-                                    <Typography variant="body1">Git</Typography>
-                                </Box>
-                                <hr />
-                                <Box>
-                                    <Typography variant="body1">GitHub</Typography>
-                                </Box>
-                                <hr />
-                                <Box>
-                                    <Typography variant="body1">Figma (Software)</Typography>
-                                </Box>
-                                <hr />
-                                <Box>
-                                    <Typography variant="body1">Redux.js</Typography>
-                                </Box>
-                            </>
-                        </Typography>}
+                    <Box className='d-flex flex-wrap'>
+                        <Box className='d-flex my-4 me-5'>
+                            <Box> <img width='60' src={LinkedIn} alt="" /></Box>
+                            <Box className='ms-3'>
+                                <Typography variant="body1" className="fw-bold">LinkedIn</Typography>
+                                <Typography variant="body2" className="text-secondary">29,834,319 followers</Typography>
+                                <Button variant="outlined">Following</Button>
+                            </Box>
+                        </Box>
+                        <Box className='d-flex my-4'>
+                            <Box> <img width='60' src={Ibex} alt="" /></Box>
+                            <Box className='ms-3'>
+                                <Typography variant="body1" className="fw-bold">ibex</Typography>
+                                <Typography variant="body2" className="text-secondary">316,743 followers</Typography>
+                                <Button variant="outlined">Following</Button>
+                            </Box>
+                        </Box>
                     </Box>
                 </Card>
             </Container>
             {/* Footer */}
-            <footer className="py-4 px-2 mt-4">
-                <Grid container className="justify-content-between" spacing={4}>
-                    <Grid item xs={12} sm={6} md={2.4}>
-                        <Typography variant="body1" gutterBottom>
-                            About
-                        </Typography>
-                        <Typography variant="body2">
-                            Professional Community Policies
-                        </Typography>
-                        <Typography variant="body2">Privacy & Terms</Typography>
-                        <Typography variant="body2">Sales Solutions</Typography>
-                        <Typography variant="body2">Careers</Typography>
-                        <Typography variant="body2">Marketing Solutions</Typography>
-                    </Grid>
-
-                    <Grid item xs={12} sm={6} md={2.4}>
-                        <Typography variant="body1" gutterBottom>
-                            Accessibility
-                        </Typography>
-                        <Typography variant="body2">Careers</Typography>
-                        <Typography variant="body2">Ad Choices</Typography>
-                        <Typography variant="body2">Mobile</Typography>
-                    </Grid>
-
-                    <Grid item xs={12} sm={6} md={2.4}>
-                        <Typography variant="body1" gutterBottom>
-                            Talent Solutions
-                        </Typography>
-                        <Typography variant="body2">Marketing Solutions</Typography>
-                        <Typography variant="body2">Visit our Help Center.</Typography>
-                        <Typography variant="body2">Advertising</Typography>
-                        <Typography variant="body2">Small Business</Typography>
-                    </Grid>
-
-                    <Grid item xs={12} sm={6} md={2.4}>
-                        <Typography className="my-2" variant="body1" gutterBottom>
-                            <HelpIcon /> Questions?
-                        </Typography>
-                        <Typography className="my-2" variant="body2">
-                            <SettingsIcon /> Manage your account and privacy Go to your
-                            Settings.
-                        </Typography>
-                        <Typography className="my-2" variant="body2">
-                            <SecurityIcon /> Recommendation transparency Learn more about
-                            Recommended Content.
-                        </Typography>
-                    </Grid>
-
-                    <Grid item xs={12} sm={6} md={2.4}>
-                        <Typography variant="body1" gutterBottom>
-                            Select Language
-                        </Typography>
-                        <FormControl fullWidth>
-                            <Select>
-                                <MenuItem value="English">English (English)</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Grid>
-                </Grid>
-                <Typography
-                    className="mt-4 text-secondary"
-                    variant="body2"
-                    sx={{ mt: 4, color: "text.secondary" }}
-                >
-                    © 2025 Your Company Name. All rights reserved.
-                </Typography>
-            </footer>
+           
         </>
     );
 };
