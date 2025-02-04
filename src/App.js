@@ -7,7 +7,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ProfileDetailsPage from './components/profile-details/ProfileDetailsPage';
 import JobsDetailsPAge from './components/jobsdetails/JobsDetailsPAge';
 import HomePage from './components/home/HomePage';
-
+import { store } from './store/store';
+import { Provider } from 'react-redux';
 function App() {
   const router = createBrowserRouter([
     {
@@ -24,7 +25,9 @@ function App() {
   ]);
   return (
     <div className="App">
+      <Provider store={store}>
       <RouterProvider router={router} />
+    </Provider>
     </div>
   );
 }
