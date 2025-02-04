@@ -15,23 +15,39 @@ const PostSection = () => {
 
   const [open, setOpen] = useState(false);
   const [newPostContent, setNewPostContent] = useState("");
+  const [image, setImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
     setNewPostContent("");
+    setImage(null);
+    setImagePreview(null);
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result); 
+        setImagePreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handlePost = () => {
     if (newPostContent.trim() === "") return;
 
     const newPost = {
-      id: posts.length + 1,
+      id: Date.now(), 
       name: "Sameer Ahmed",
       role: "Front-End Web Developer | React.js | Next.js | Redux",
       content: newPostContent,
       avatar: ProfileLogo,
-      image: null,
+      image: image || null,
     };
 
     dispatch(addPost(newPost));
@@ -55,17 +71,17 @@ const PostSection = () => {
       <hr />
 
       {posts.map((post) => (
-        <Card key={post.id} className="mb-3 p-3 rounded-3">
-          <Box className="d-flex align-items-center">
+        <Card key={post.id} className="mb-3  rounded-3">
+          <Box className="d-flex align-items-center px-3">
             <Avatar src={post.avatar} alt={post.name} className="me-2" />
             <Box>
               <h6>{post.name}</h6>
               <p className="text-muted">{post.role}</p>
             </Box>
           </Box>
-          <p className="mt-2">{post.content}</p>
-          {post.image && <img src={post.image} alt="Post" className="w-100 rounded-2" />}
-          <Box className="d-flex justify-content-between mt-2">
+          <p className=" px-3">{post.content}</p>
+          {post.image && <img src={post.image} alt="Post" className="w-100" />}
+          <Box className="d-flex justify-content-between  p-3">
             <Button variant="text" startIcon={<ThumbUpIcon />} className="text-muted">Like</Button>
             <Button variant="text" startIcon={<CommentIcon />} className="text-muted">Comment</Button>
             <Button variant="text" startIcon={<ShareIcon />} className="text-muted">Share</Button>
@@ -83,13 +99,17 @@ const PostSection = () => {
           <TextField
             fullWidth
             multiline
-            rows={8}
+            rows={5}
             placeholder="What do you want to talk about?"
             variant="outlined"
             className="mt-2"
             value={newPostContent}
             onChange={(e) => setNewPostContent(e.target.value)}
           />
+          
+          <input type="file" accept="image/*" className="mt-3" onChange={handleImageChange} />
+          {imagePreview && <img src={imagePreview} alt="Preview" className="w-100 mt-2 rounded-2" />}
+          
           <Box className="d-flex justify-content-end mt-3">
             <Button variant="outlined" color="secondary" onClick={handleClose}>Cancel</Button>
             <Button variant="contained" color="primary" className="ms-3" onClick={handlePost}>Post</Button>
