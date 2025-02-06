@@ -16,6 +16,8 @@ import { Avatar, Button, Container, Typography } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ProfileLogo from "../assets/unnamed.jpg";
 import { Link, Outlet } from "react-router-dom";
+import { BottomNavigation, BottomNavigationAction } from "@mui/material";
+import { Home, People, Work, Notifications } from "@mui/icons-material";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -63,11 +65,13 @@ export default function AppLayout() {
       >
         <Container maxWidth="xl">
           <Toolbar className="d-flex justify-content-center align-items-center">
-            <Avatar
+           <Link to='/profile-details'>
+           <Avatar
               className="d-block d-sm-none me-3"
               alt="Sameer Ahmed"
               src={ProfileLogo}
             />
+           </Link>
             <Button className="d-none d-sm-block">
               <LinkedInIcon sx={{ fontSize: "45px" }} />
             </Button>
@@ -156,6 +160,24 @@ export default function AppLayout() {
                 </Typography>
               </Box>
             </Box>
+             <BottomNavigation
+      showLabels
+      sx={{
+        display: { xs: "flex", sm: "none" }, 
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        backgroundColor: "white",
+        zIndex: 1000,
+        borderTop: "1px solid #ddd",
+      }}
+    >
+      <BottomNavigationAction label="Home" icon={<Home />} component={Link} to="/" />
+      <BottomNavigationAction label="Network" icon={<People />} />
+      <BottomNavigationAction label="Jobs" icon={<Work />} component={Link} to="/jobs-details" />
+      <BottomNavigationAction label="Notifications" icon={<Notifications />} />
+    </BottomNavigation>
           </Toolbar>
         </Container>
       </AppBar>
