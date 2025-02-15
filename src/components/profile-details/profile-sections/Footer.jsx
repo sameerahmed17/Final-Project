@@ -1,10 +1,16 @@
-import { FormControl, Grid, MenuItem, Select, Typography } from '@mui/material'
-import React from 'react'
+import { FormControl, Grid, MenuItem, Select,  Typography } from '@mui/material'
+import React, { useState } from 'react'
 import HelpIcon from "@mui/icons-material/Help";
 import SettingsIcon from "@mui/icons-material/Settings";
 import SecurityIcon from "@mui/icons-material/Security";
 
 const Footer = () => {
+
+    const [selectedLanguage, setSelectedLanguage] = useState(""); 
+
+    const handleChange = (event) => {
+      setSelectedLanguage(event.target.value); 
+    };
   return (
     <footer className="py-4 px-2 mt-4">
     <Grid container className="justify-content-between" spacing={4}>
@@ -59,14 +65,15 @@ const Footer = () => {
                 Select Language
             </Typography>
             <FormControl fullWidth>
-                <Select>
-                    <MenuItem value="English">Dansk (Danish)</MenuItem>
-                    <MenuItem value="English">Polski (Polish)</MenuItem>
-                    <MenuItem value="English">Suomi (Finnsh)</MenuItem>
-                    <MenuItem value="English">Tagalog (Tagalog)</MenuItem>
-                    <MenuItem value="English">English (English)</MenuItem>
-                </Select>
-            </FormControl>
+        <Select value={selectedLanguage} onChange={handleChange} displayEmpty>
+          <MenuItem value="" disabled>Select a language</MenuItem>
+          <MenuItem value="Dansk (Danish)">Dansk (Danish)</MenuItem>
+          <MenuItem value="Polski (Polish)">Polski (Polish)</MenuItem>
+          <MenuItem value="Suomi (Finnish)">Suomi (Finnish)</MenuItem>
+          <MenuItem value="Tagalog (Tagalog)">Tagalog (Tagalog)</MenuItem>
+          <MenuItem value="English (English)">English (English)</MenuItem>
+        </Select>
+      </FormControl>
         </Grid>
     </Grid>
     <Typography

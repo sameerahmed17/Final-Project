@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardContent, Typography, List, ListItem, Button, Box, Avatar, AvatarGroup, } from "@mui/material";
-import { Close } from "@mui/icons-material";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import MyProfile from "../../assets/Sameer Ahmed.jpeg";
 import JobsImg1 from "../../assets/spiralyze_logo.jpeg";
@@ -29,8 +28,8 @@ import Avatar2 from "../../assets/mudassir.png";
 
 const JobDetailsRightPage = () => {
   return (
-    <Box className="d-flex flex-column gap-4" style={{ maxWidth: "900px" }}>
-      <Card className="rounded-3 shadow px-5 py-3 d-none d-lg-block">
+    <Box className="d-flex flex-column gap-4">
+      <Card className="rounded-3 shadow px-5 py-3 ">
         <Typography variant="h6" className="fw-bold">
           Job picks for you
         </Typography>
@@ -41,55 +40,63 @@ const JobDetailsRightPage = () => {
 
         <List>
           <ListItem className="d-flex align-items-centr justify-content-between">
-            <Box className="d-flex align-items-center">
+            <Box className="d-flex">
               <Box className="me-3">
                 <img width="60px" src={JobSimg2} alt="Job Logo" />
               </Box>
               <Box>
-                <Typography variant="body1" color="primary" className="fw-bold">
+                <Typography variant="body1" sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
                   Full Stack Developer
                 </Typography>
-                <Typography variant="body2">
+                <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
                   Zedcom Corporation · Karachi, Sindh, Pakistan (On-site)
                 </Typography>
                 <Typography
                   variant="caption"
-                  color="textSecondary"
-                  className="d-block"
                 >
                   Promoted · Easy Apply
                 </Typography>
               </Box>
             </Box>
-            <Button size="small">
-              <Close fontSize="small" />
-            </Button>
+            <Button
+            size="small"
+            sx={{
+              color: "#555",
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
+            ✖
+          </Button>
           </ListItem>
           <hr />
           <ListItem className="d-flex align-items-centr justify-content-between">
-            <Box className="d-flex align-items-center">
+            <Box className="d-flex">
               <Box className="me-3">
                 <img width="60px" src={JobsImg1} alt="Job Logo" />
               </Box>
               <Box>
-                <Typography variant="body1" color="primary" className="fw-bold">
+                <Typography variant="body1" sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
                   Frontend Developer
                 </Typography>
-                <Typography variant="body2">
+                <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
                   GT Ecom · Pakistan (Remote)
                 </Typography>
                 <Typography
                   variant="caption"
-                  color="textSecondary"
-                  className="d-block"
                 >
                   4 months ago
                 </Typography>
               </Box>
             </Box>
-            <Button size="small">
-              <Close fontSize="small" />
-            </Button>
+            <Button
+            size="small"
+            sx={{
+              color: "#555",
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
+            ✖
+          </Button>
           </ListItem>
         </List>
         <hr />
@@ -99,12 +106,16 @@ const JobDetailsRightPage = () => {
           </Button>
         </Box>
       </Card>
-      <Card className="rounded-3 shadow px-5 py-3 d-none d-lg-block">
-        <Box className="d-flex justify-content-between align-items-center">
-          <Typography variant="h6" className="fw-bold mb-2">
+      <Card className="rounded-3 shadow px-5 py-3 ">
+        <Box className="d-flex justify-content-between">
+         <Box>
+         <Typography variant="h6" className="fw-bold mb-2">
             Recent job searches
           </Typography>
-          <Typography variant="body1">Clear</Typography>
+         </Box>
+         <Box>
+         <Button variant="text" size="small">Clear</Button>
+         </Box>
         </Box>
         <Box>
           <Typography variant="body1" className="fw-bold">
@@ -136,7 +147,7 @@ const JobDetailsRightPage = () => {
           </Typography>
         </Box>
       </Card>
-      <Card className="rounded-3 shadow mb-2 px-5 py-3 d-none d-lg-block">
+      <Card className="rounded-3 shadow mb-2 px-5 py-3 ">
         <Box>
           <Typography variant="body1">PREMIUM</Typography>
           <Typography variant="h6" className="fw-bold my-1">
@@ -175,12 +186,12 @@ const JobDetailsRightPage = () => {
         </Box>
         <hr />
         <Box className="mt-3 d-flex ">
-          <img width="60px" className="me-3" src={JobsImg1} alt="Jobs" />
+          <img width="60px" height='60px' className="me-3" src={JobsImg1} alt="Jobs" />
           <Box>
-            <Typography variant="body1" className="text-primary fw-bold">
+            <Typography variant="body1" sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
               Associate Frontend Engineer (Fresh Graduates)
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
               Softech Worldwide - Karachi Division, Sindh, Pakistan (On-site)
             </Typography>
             <Typography variant="caption">6 months ago</Typography>
@@ -189,12 +200,12 @@ const JobDetailsRightPage = () => {
         <Box>
           <hr />
           <Box className="mt-3 d-flex ">
-            <img width="60px" className="me-3" src={JobsImg1} alt="Jobs" />
+            <img width="60px" height='60px' className="me-3" src={JobsImg1} alt="Jobs" />
             <Box>
-              <Typography variant="body1" className="text-primary fw-bold">
+              <Typography variant="body1"  sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
                 UI / Front-End Developer
               </Typography>
-              <Typography variant="body2">
+              <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
                 Soliton Technologies - Lahore, Punjab, Pakistan (On-site)
               </Typography>
               <Typography variant="caption">1 week ago</Typography>
@@ -208,7 +219,7 @@ const JobDetailsRightPage = () => {
           </Box>
         </Box>
       </Card>
-      <Card className="rounded-3 shadow px-5 py-3 d-none d-lg-block">
+      <Card className="rounded-3 shadow px-5 py-3 ">
         <CardContent>
           <Typography variant="h6" className="fw-bold">
             Hiring in your network
@@ -224,45 +235,42 @@ const JobDetailsRightPage = () => {
             <Box>
               <Typography
                 variant="body1"
-                style={{ fontWeight: "bold", color: "#0073b1" }}
-              >
+                sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
                 Dotnet Developerr
               </Typography>
-              <Typography variant="body2" style={{ color: "#555" }}>
+              <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
                 Daily Tech Sol · Karachi Division, Sindh, Pakistan (On-site)
               </Typography>
-              <Typography variant="body2" style={{ color: "#777" }}>
+              <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
                 Karachi Division, Sindh, Pakistan (On-site)
               </Typography>
               <Box sx={{ display: "flex", justifyContent: "flex-start", mb: 1 }}>
-              <AvatarGroup
-                spacing="26"
-                sx={{
-                  justifyContent: "flex-start",
-                }}
-              >
-                <Avatar alt="Kashif" src={Avatar2} />
-                <Avatar alt="Sameer" src={ProfileLogo} />
-                <Avatar alt="Tabish" src={Avatar1} />
-              </AvatarGroup>
-            </Box>
+                <AvatarGroup
+                  spacing="26"
+                  sx={{
+                    justifyContent: "flex-start",
+                  }}
+                >
+                  <Avatar alt="Kashif" src={Avatar2} />
+                  <Avatar alt="Sameer" src={ProfileLogo} />
+                  <Avatar alt="Tabish" src={Avatar1} />
+                </AvatarGroup>
+              </Box>
               <Typography
                 variant="caption"
-                style={{ color: "#888", marginTop: "4px" }}
-              >
+                sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
                 Viewed Promoted Easy Apply
               </Typography>
             </Box>
             <Button
-              size="small"
-              style={{
-                color: "#555",
-                textTransform: "none",
-                marginLeft: "auto", // Push the button to the end
-              }}
-            >
-              ✖
-            </Button>
+            size="small"
+            sx={{
+              color: "#555",
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
+            ✖
+          </Button>
           </Box>
           <hr />
           <Box className="d-flex align-items-start mb-4">
@@ -272,45 +280,42 @@ const JobDetailsRightPage = () => {
             <Box>
               <Typography
                 variant="body1"
-                style={{ fontWeight: "bold", color: "#0073b1" }}
-              >
+                sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
                 Frontend Developer
               </Typography>
-              <Typography variant="body2" style={{ color: "#555" }}>
+              <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
                 ibex · Karāchi, Sindh, Pakistan (On-site)
               </Typography>
-              <Typography variant="body2" style={{ color: "#777" }}>
+              <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
                 Karāchi, Sindh, Pakistan (On-site)
               </Typography>
               <Box sx={{ display: "flex", justifyContent: "flex-start", mb: 1 }}>
-              <AvatarGroup
-                spacing="26"
-                sx={{
-                  justifyContent: "flex-start",
-                }}
-              >
-                <Avatar alt="Tabish" src={Avatar1} />
-                <Avatar alt="Kashif" src={Avatar2} />
-                <Avatar alt="Sameer" src={ProfileLogo} />
-              </AvatarGroup>
-            </Box>
+                <AvatarGroup
+                  spacing="26"
+                  sx={{
+                    justifyContent: "flex-start",
+                  }}
+                >
+                  <Avatar alt="Tabish" src={Avatar1} />
+                  <Avatar alt="Kashif" src={Avatar2} />
+                  <Avatar alt="Sameer" src={ProfileLogo} />
+                </AvatarGroup>
+              </Box>
               <Typography
                 variant="caption"
-                style={{ color: "#888", marginTop: "4px" }}
-              >
+                sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
                 Viewed Promoted Easy Apply
               </Typography>
             </Box>
             <Button
-              size="small"
-              style={{
-                color: "#555",
-                textTransform: "none",
-                marginLeft: "auto",
-              }}
-            >
-              ✖
-            </Button>
+            size="small"
+            sx={{
+              color: "#555",
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
+            ✖
+          </Button>
           </Box>
           <hr />
           <Box className="d-flex align-items-start mb-4">
@@ -320,45 +325,42 @@ const JobDetailsRightPage = () => {
             <Box>
               <Typography
                 variant="body1"
-                style={{ fontWeight: "bold", color: "#0073b1" }}
-              >
+                sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
                 Full Stack Developer (Laravel+Vue.js)
               </Typography>
-              <Typography variant="body2" style={{ color: "#555" }}>
+              <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
                 Hybrid Mediaworks · Islamabad, Islāmābād, Pakistan (On-site)
               </Typography>
-              <Typography variant="body2" style={{ color: "#777" }}>
+              <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
                 Islamabad, Islāmābād, Pakistan (On-site)
               </Typography>
               <Box sx={{ display: "flex", justifyContent: "flex-start", mb: 1 }}>
-              <AvatarGroup
-                spacing="26"
-                sx={{
-                  justifyContent: "flex-start",
-                }}
-              >
-                <Avatar alt="Sameer" src={ProfileLogo} />
-                <Avatar alt="Tabish" src={Avatar1} />
-                <Avatar alt="Kashif" src={Avatar2} />
-              </AvatarGroup>
-            </Box>
+                <AvatarGroup
+                  spacing="26"
+                  sx={{
+                    justifyContent: "flex-start",
+                  }}
+                >
+                  <Avatar alt="Sameer" src={ProfileLogo} />
+                  <Avatar alt="Tabish" src={Avatar1} />
+                  <Avatar alt="Kashif" src={Avatar2} />
+                </AvatarGroup>
+              </Box>
               <Typography
                 variant="caption"
-                style={{ color: "#888", marginTop: "4px" }}
-              >
+                sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
                 Promoted Easy Apply
               </Typography>
             </Box>
             <Button
-              size="small"
-              style={{
-                color: "#555",
-                textTransform: "none",
-                marginLeft: "auto", // Push the button to the end
-              }}
-            >
-              ✖
-            </Button>
+            size="small"
+            sx={{
+              color: "#555",
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
+            ✖
+          </Button>
           </Box>
           <hr />
           <Box className="d-flex justify-content-center">
@@ -378,36 +380,32 @@ const JobDetailsRightPage = () => {
           </Typography>
         </Box>
         <Box className="d-flex align-items-start mb-4">
-          <Box className='me-3'>
-            <img width='60' src={JobsImg6} alt="" />
+          <Box className="me-3">
+            <img width="60" src={JobsImg6} alt="" />
           </Box>
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
               Node.js Developer
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
               AAG · Pakistan (Remote)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
               Pakistan (Remote)
             </Typography>
-            <Typography
-              variant="caption"
-            >
+            <Typography variant="caption" sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
               2 weeks ago
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
@@ -419,31 +417,28 @@ const JobDetailsRightPage = () => {
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }} >
               Full Stack Developer
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
               Pakistan Hiring · Karāchi, Sindh, Pakistan
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
               Karāchi, Sindh, Pakistan
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
               3 weeks ago
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
@@ -455,31 +450,28 @@ const JobDetailsRightPage = () => {
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }} >
               Remote Python Developer
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
               Turing · Pakistan (Remote)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
               Pakistan (Remote)
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
               Viewed Promoted
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
@@ -491,32 +483,28 @@ const JobDetailsRightPage = () => {
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >
-
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }} >
               Full Stack Engineer
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
               Time Doctor · Pakistan (Remote)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
               Pakistan (Remote)
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
               Viewed Promoted
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
@@ -528,32 +516,28 @@ const JobDetailsRightPage = () => {
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >
-
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }} > 
               Backend Software Engineer
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
               Soum · Pakistan (Remote)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
+            <Typography variant="body2"sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
               Pakistan (Remote)
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
               1 month ago Easy Apply
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
@@ -565,33 +549,28 @@ const JobDetailsRightPage = () => {
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >
-
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
               Software Engineer, MLOps
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
               Motive · Pakistan (Remote)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
               Pakistan (Remote)
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
-
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
               1 connection works here Promoted
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
@@ -603,31 +582,28 @@ const JobDetailsRightPage = () => {
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
               Mobile Application Developer
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
               ibex · Lahore, Punjab, Pakistan (On-site)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
               Lahore, Punjab, Pakistan (On-site)
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
               Promoted  Easy Apply
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
@@ -639,32 +615,28 @@ const JobDetailsRightPage = () => {
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >
-
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
               Software Developer
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
               Contour Software · Karāchi, Sindh, Pakistan (On-site)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
               Karāchi, Sindh, Pakistan (On-site)
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
               4 months ago
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
@@ -676,287 +648,260 @@ const JobDetailsRightPage = () => {
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
               Senior Developer
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
               Reliability Academy · Pakistan (Remote)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
               Pakistan (Remote)
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
               Promoted
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
         <hr />
         <Box className="d-flex align-items-start mb-4">
           <Box className='me-3'>
-            <img width='60' src={JobsImg14}alt="" />
+            <img width='60' src={JobsImg14} alt="" />
           </Box>
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
               Lead Sharepoint and MS365 Engineer
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
-            Afiniti · Karachi Division, Sindh, Pakistan (Hybrid)
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
+              Afiniti · Karachi Division, Sindh, Pakistan (Hybrid)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
-            Karachi Division, Sindh, Pakistan (Hybrid)
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
+              Karachi Division, Sindh, Pakistan (Hybrid)
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
               Promoted
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
         <hr />
         <Box className="d-flex align-items-start mb-4">
           <Box className='me-3'>
-            <img width='60' src={JobsImg15}alt="" />
+            <img width='60' src={JobsImg15} alt="" />
           </Box>
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >
-             
-React Native Developer
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}        >
+              React Native Developer
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
-            TekRevol · Karāchi, Sindh, Pakistan (On-site)
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
+              TekRevol · Karāchi, Sindh, Pakistan (On-site)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
-            Karāchi, Sindh, Pakistan (On-site)
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
+              Karāchi, Sindh, Pakistan (On-site)
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
-             
-1 connection works here Viewed Easy Apply
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
+              1 connection works here Viewed Easy Apply
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
         <hr />
         <Box className="d-flex align-items-start mb-4">
           <Box className='me-3'>
-            <img width='60' src={JobsImg16}alt="" />
+            <img width='60' src={JobsImg16} alt="" />
           </Box>
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >
-             Android Developer
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
+              Android Developer
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
-            NymCard · Karāchi, Sindh, Pakistan (On-site)
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
+              NymCard · Karāchi, Sindh, Pakistan (On-site)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
-            Karāchi, Sindh, Pakistan (On-site)
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
+              Karāchi, Sindh, Pakistan (On-site)
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
-             3 months ago
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
+              3 months ago
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
         <hr />
         <Box className="d-flex align-items-start mb-4">
           <Box className='me-3'>
-            <img width='60' src={JobsImg17}alt="" />
+            <img width='60' src={JobsImg17} alt="" />
           </Box>
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >
-             
-Senior Blockchain Developer
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }} >
+              Senior Blockchain Developer
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
-            KalPay · Lahore, Punjab, Pakistan (Hybrid)
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
+              KalPay · Lahore, Punjab, Pakistan (Hybrid)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
-            Lahore, Punjab, Pakistan (Hybrid)
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
+              Lahore, Punjab, Pakistan (Hybrid)
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
-             Applicant review time is typically 1 day 2 weeks ago Easy Apply
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
+              Applicant review time is typically 1 day 2 weeks ago Easy Apply
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
         <hr />
         <Box className="d-flex align-items-start mb-4">
           <Box className='me-3'>
-            <img width='60' src={JobsImg18}alt="" />
+            <img width='60' src={JobsImg18} alt="" />
           </Box>
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >
-             Senior Software Developer .NET + Angular
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }} >
+              Senior Software Developer .NET + Angular
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
-            VeriPark · Pakistan (Remote)
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
+              VeriPark · Pakistan (Remote)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
-          Pakistan (On-site)
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
+              Pakistan (On-site)
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
-             Promoted
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
+              Promoted
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
         <hr />
         <Box className="d-flex align-items-start mb-4">
           <Box className='me-3'>
-            <img width='60' src={JobsImg19}alt="" />
+            <img width='60' src={JobsImg19} alt="" />
           </Box>
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
-            >Software EngineerFULL TIME
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}>
+              Software EngineerFULL TIME
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
-            SolutionInn · Lahore, Punjab, Pakistan (On-site)
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
+              SolutionInn · Lahore, Punjab, Pakistan (On-site)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
-            Lahore, Punjab, Pakistan (On-site)
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
+              Lahore, Punjab, Pakistan (On-site)
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
-           Viewed
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
+              Viewed
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>
         <hr />
         <Box className="d-flex align-items-start mb-4">
           <Box className='me-3'>
-            <img width='60' src={JobsImg20}alt="" />
+            <img width='60' src={JobsImg20} alt="" />
           </Box>
           <Box>
             <Typography
               variant="body1"
-              style={{ fontWeight: "bold", color: "#0073b1" }}
+              sx={{ fontWeight: "bold", color: "#0073b1", fontSize: { xs: "14px", sm: "16px" } }}
             >
-             
-React Native Developer
+              React Native Developer
             </Typography>
-            <Typography variant="body2" style={{ color: "#555" }}>
-            TekRevol · Karāchi, Sindh, Pakistan (On-site)
+            <Typography variant="body2" sx={{ color: "#555", fontSize: { xs: "12px", sm: "14px" } }}>
+              TekRevol · Karāchi, Sindh, Pakistan (On-site)
             </Typography>
-            <Typography variant="body2" style={{ color: "#777" }}>
-            Karāchi, Sindh, Pakistan (On-site)
+            <Typography variant="body2" sx={{ color: "#777", fontSize: { xs: "12px", sm: "14px" } }}>
+              Karāchi, Sindh, Pakistan (On-site)
             </Typography>
             <Typography
               variant="caption"
-              style={{ color: "#888", marginTop: "4px" }}
-            >
-             
-1 connection works here Viewed Easy Apply
+              sx={{ fontSize: { xs: "10px", sm: "12px" } }}>
+              1 connection works here Viewed Easy Apply
             </Typography>
           </Box>
           <Button
             size="small"
-            style={{
+            sx={{
               color: "#555",
-              textTransform: "none",
-              marginLeft: "auto", // Push the button to the end
-            }}
-          >
+              marginLeft: "auto",
+              display: { xs: "none", sm: "block" },
+            }}>
             ✖
           </Button>
         </Box>

@@ -18,6 +18,7 @@ import ProfileLogo from "../assets/unnamed.jpg";
 import { Link, Outlet } from "react-router-dom";
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import { Home, People, Work, Notifications } from "@mui/icons-material";
+import useProfilePage from "../profile-details/profile-sections/useProfilePage";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -58,6 +59,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function AppLayout() {
+  const { avatar, } = useProfilePage()
   return (
     <>
       <AppBar
@@ -65,13 +67,13 @@ export default function AppLayout() {
       >
         <Container maxWidth="xl">
           <Toolbar className="d-flex justify-content-center align-items-center">
-           <Link to='/profile-details'>
-           <Avatar
-              className="d-block d-sm-none me-3"
-              alt="Sameer Ahmed"
-              src={ProfileLogo}
-            />
-           </Link>
+            <Link to='/profile-details'>
+              <Avatar
+                className="d-block d-sm-none me-3"
+                alt="Sameer Ahmed"
+                src={ProfileLogo}
+              />
+            </Link>
             <Button className="d-none d-sm-block">
               <LinkedInIcon sx={{ fontSize: "45px" }} />
             </Button>
@@ -100,12 +102,12 @@ export default function AppLayout() {
                 flexGrow: 1,
               }}
             >
-            
-             <Box className="d-flex flex-column align-items-center">
-             <Link to='/'>
-                <IconButton size="large" className="text-black" color="inherit">
-                  <HomeIcon />
-                </IconButton>
+
+              <Box className="d-flex flex-column align-items-center">
+                <Link to='/'>
+                  <IconButton size="large" className="text-black" color="inherit">
+                    <HomeIcon />
+                  </IconButton>
                 </Link>
                 <Typography variant="body1" sx={{ fontSize: "12px" }}>
                   Home
@@ -148,8 +150,8 @@ export default function AppLayout() {
                 </Typography>
               </Box>
               <Box className="d-flex flex-column align-items-center">
-                <Link to="/profile-details">
-                  <Avatar alt="Sameer Ahmed" src={ProfileLogo} />
+                <Link to="/profile-details" sx={{ cursor: 'pointer', }}>
+                  <Avatar src={avatar} />
                 </Link>
                 <Typography
                   variant="body1"
@@ -160,24 +162,24 @@ export default function AppLayout() {
                 </Typography>
               </Box>
             </Box>
-             <BottomNavigation
-      showLabels
-      sx={{
-        display: { xs: "flex", sm: "none" }, 
-        position: "fixed",
-        bottom: 0,
-        left: 0,
-        right: 0,
-        backgroundColor: "white",
-        zIndex: 1000,
-        borderTop: "1px solid #ddd",
-      }}
-    >
-      <BottomNavigationAction label="Home" icon={<Home />} component={Link} to="/" />
-      <BottomNavigationAction label="Network" icon={<People />} />
-      <BottomNavigationAction label="Jobs" icon={<Work />} component={Link} to="/jobs-details" />
-      <BottomNavigationAction label="Notifications" icon={<Notifications />} />
-    </BottomNavigation>
+            <BottomNavigation
+              showLabels
+              sx={{
+                display: { xs: "flex", sm: "none" },
+                position: "fixed",
+                bottom: 0,
+                left: 0,
+                right: 0,
+                backgroundColor: "white",
+                zIndex: 1000,
+                borderTop: "1px solid #ddd",
+              }}
+            >
+              <BottomNavigationAction label="Home" icon={<Home />} component={Link} to="/" />
+              <BottomNavigationAction label="Network" icon={<People />} />
+              <BottomNavigationAction label="Jobs" icon={<Work />} component={Link} to="/jobs-details" />
+              <BottomNavigationAction label="Notifications" icon={<Notifications />} />
+            </BottomNavigation>
           </Toolbar>
         </Container>
       </AppBar>

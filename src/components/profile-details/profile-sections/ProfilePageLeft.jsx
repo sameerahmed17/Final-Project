@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Container, Grid, Paper, Avatar, Button, Typography, Box, Card, TextField, IconButton, Tabs, Tab, } from "@mui/material";
-import BgCover from '../../assets/Banner.png';
-import MyProfile from "../../assets/Sameer Ahmed.jpeg";
+import React from "react";
+import { Container, Grid, Avatar, Button, Typography, Box, Card, TextField, IconButton, Tabs, Tab, Modal, } from "@mui/material";
 import xWaveLogo from '../../assets/xwavepak_logo.jpeg';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
@@ -28,61 +26,59 @@ import PostImg2 from '../../assets/post-img-two.jpeg'
 import PostImg3 from '../../assets/post-img-three.jpeg'
 import Ibex from '../../assets/ibex.jpeg';
 import LinkedIn from '../../assets/linkedin_logo.jpeg'
+import usePostSection from "../../home/Sections/usePostSection";
+import useProfilePage from "./useProfilePage";
+import { ToastContainer } from "react-toastify";
 
 
 
 const ProfilePageLeft = () => {
-    const getSavedText = () => {
-        return localStorage.getItem("aboutText") || `I’m currently enrolled in a 12-month Frontend Web Development course at xWave, a program that helps empower Pakistan’s youth with IT skills. I’m skilled in HTML, CSS, Bootstrap5, JavaScript, and React.js, and have completed 4+ projects, including websites and landing pages.
-    
-    I also completed an internship at Prodigy Info Tech, where I developed 4 projects, a stopwatch, weather app, Tic Tac Toe app, and personal portfolio, using HTML5, CSS3, and JavaScript. These experiences helped me apply my skills in real-world projects.
-    
-    Actively looking for new web development opportunities and projects. Reach out to me at sameerahmedxwave@gmail.com`;
-    };
 
-    const [aboutText, setAboutText] = useState(getSavedText);
-    const [isEditing, setIsEditing] = useState(false);
+    const { profileData, tabValue, setTabValue, banner, avatar, handleBannerChange, handleAvatarChange, setAboutText, isEditing, aboutText, setIsEditing } = useProfilePage()
 
-    // Jab bhi aboutText update ho, localStorage me save ho
-    useEffect(() => {
-        localStorage.setItem("aboutText", aboutText);
-    }, [aboutText]);
-
-
-    const profileData = {
-        name: "Sameer Ahmed",
-        role: "Frontend Web Developer",
-        skills: ["HTML5", "CSS3", 'Bootstrap', "JavaScript", "React.js", "Next.js"],
-        location: "Khairpur District, Sindh, Pakistan",
-        portfolio: "My Portfolio",
-        connections: "500+ connections",
-    };
-    const [tabValue, setTabValue] = useState(0);
+    const { handleOpen, handleClose, setNewPostContent, newPostContent, handleImageChange, imagePreview, handlePost, open } = usePostSection()
 
     return (
         <>
-            <Container maxWidth="md" >
+            <Container>
+            <ToastContainer position="top-right" autoClose={3000} />
                 {/* Profile */}
-                <Paper elevation={3} sx={{ borderRadius: 3, overflow: "hidden" }}>
-                    <Box
-                        sx={{
-                            position: "relative",
-                            height: 190,
-                            backgroundImage: `url(${BgCover})`,
-                        }}
-                    >
-                        <Avatar
-                            src={MyProfile}
-                            sx={{
-                                width: 140,
-                                height: 140,
-                                position: "absolute",
-                                bottom: -40,
-                                left: 20,
-                                border: "4px solid white",
-                            }}
-                        />
+                <Card className="rounded-3">
+                    <Box sx={{
+                        position: "relative",
+                        height: { xs: 85, sm: 190, md: 210 },
+                        width: "100%",
+                        backgroundImage: `url(${banner})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                    }}>
+                        {/* ✅ Hidden File Input for Banner */}
+                        <input type="file" accept="image/*" onChange={handleBannerChange} id="banner-upload" style={{ display: "none" }} />
+                        <label htmlFor="banner-upload">
+                            <IconButton sx={{ position: "absolute", top: 10, right: 10, background: "rgba(0,0,0,0.5)" }} component="span">
+                                <Edit sx={{ color: "white" }} />
+                            </IconButton>
+                        </label>
+
+                        <label htmlFor="avatar-upload">
+                            <Avatar
+                                src={avatar}
+                                sx={{
+                                    width: { xs: 80, sm: 110, md: 140 },
+                                    height: { xs: 80, sm: 110, md: 140 },
+                                    position: "absolute",
+                                    bottom: { xs: -30, sm: -35, md: -40 },
+                                    left: { xs: 10, sm: 15, md: 20 },
+                                    border: "4px solid white",
+                                    cursor: 'pointer',
+                                }}
+                            />
+                            {/* ✅ Hidden File Input for Avatar */}
+                            <input type="file" accept="image/*" onChange={handleAvatarChange} id="avatar-upload" style={{ display: "none" }} />
+                        </label>
                     </Box>
+
                     <Box sx={{ p: 3, pt: 6 }}>
                         <Grid container spacing={2} alignItems="center">
                             <Grid item xs={12} md={8}>
@@ -120,7 +116,7 @@ const ProfilePageLeft = () => {
                             <Button variant="outlined" size="small">Resources </Button>
                         </Box>
                     </Box>
-                </Paper>
+                </Card>
                 {/* Analytics */}
                 <Card className="shadow mt-3 rounded-3 px-4 py-4">
                     <Typography variant="subtitle2" className="fw-bold">
@@ -209,7 +205,7 @@ const ProfilePageLeft = () => {
                             </Button>
                         </Box>
                     ) : (
-                        <Typography variant="body1">{aboutText}</Typography>
+                        <Typography variant="body1" style={{ whiteSpace: "pre-wrap" }}>{aboutText}</Typography>
                     )}
                 </Card>
                 {/* Activity */}
@@ -220,7 +216,7 @@ const ProfilePageLeft = () => {
                             <a className="text-decoration-none" href="https://www.linkedin.com/mynetwork/network-manager/people-follow/followers/">1,443 followers</a>
                         </Box>
                         <Box>
-                            <Button variant="outlined">Create a post</Button> <EditIcon className="ms-3" />
+                            <Button variant="outlined" onClick={handleOpen}>Create a post</Button>
                         </Box>
                     </Box>
                     <Tabs value={tabValue} onChange={(e, newValue) => setTabValue(newValue)} variant="scrollable" scrollButtons="auto">
@@ -574,9 +570,36 @@ const ProfilePageLeft = () => {
                         </Box>
                     </Box>
                 </Card>
+                {/* Modal for Post Creation */}
+                <Modal open={open} onClose={handleClose} aria-labelledby="modal-title">
+                    <Box
+                        className="position-absolute top-50 start-50 translate-middle bg-white shadow-lg p-4 rounded"
+                        style={{ width: "90%", maxWidth: "800px", maxHeight: "90vh", overflowY: "auto" }}
+                    >
+                        <Typography id="modal-title" variant="h6">Create a Post</Typography>
+                        <TextField
+                            fullWidth
+                            multiline
+                            rows={5}
+                            placeholder="What do you want to talk about?"
+                            variant="outlined"
+                            className="mt-2"
+                            value={newPostContent}
+                            onChange={(e) => setNewPostContent(e.target.value)}
+                        />
+
+                        <input type="file" accept="image/*" className="mt-3" onChange={handleImageChange} />
+                        {imagePreview && <img src={imagePreview} alt="Preview" className="w-100 mt-2 rounded-2" />}
+
+                        <Box className="d-flex justify-content-end mt-3">
+                            <Button variant="outlined" color="secondary" onClick={handleClose}>Cancel</Button>
+                            <Button variant="contained" color="primary" className="ms-3" onClick={handlePost}>Post</Button>
+                        </Box>
+                    </Box>
+                </Modal>
             </Container>
             {/* Footer */}
-           
+
         </>
     );
 };

@@ -1,41 +1,48 @@
 import React from "react";
 import { Avatar, Box, Card, Typography } from "@mui/material";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
-import ProfileLogo from "../../assets/unnamed.jpg";
-import BgCover from '../../assets/Banner.png'
 import { Link } from "react-router-dom";
+import useProfilePage from "../../profile-details/profile-sections/useProfilePage";
 
 const AboutSection = () => {
+
+  const {  banner, avatar,  } = useProfilePage()
+
   return (
     <>
         <Card
       className="rounded-3 overflow-hidden"
       sx={{
         boxShadow: "0 0 5px rgba(0, 0, 0, 0.1)",
-      }}
-    >
-    
-      <Box
-          sx={{
-            height: "100px",
-            backgroundColor: "#ddd",
-            backgroundImage: `url(${BgCover})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        ></Box>
+      }}>
+        <Box sx={{
+                        position: "relative",
+                        height: { md: 70 },
+                        width: "100%",
+                        backgroundImage: `url(${banner})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                    }}>
+                       
+                       <Link to='/profile-details' style={{ textDecoration: 'none' }}>
+                            <Avatar
+                                src={avatar}
+                                sx={{
+                                    width: { md: 80 },
+                                    height: { md: 80 },
+                                    position: "absolute",
+                                    bottom: { md: -40 },
+                                     left: { md: 90 },
+                                    border: "4px solid white",
+                                    cursor: 'pointer',
+                                }}
+                            />
+                          </Link>
+                    </Box>
         
         <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            padding: "16px 0",
-            marginTop: "-50px",
-          }}
-        >
-
-        <Avatar src={ProfileLogo} alt="Profile" className="m-auto h-75 w-25" />
+          sx={{ marginTop: "50px",}}>
         <Link to='/profile-details' style={{ textDecoration: 'none' }}>
         <Typography variant="h6" className="mt-1 fw-bold text-center text-black">
           Sameer Ahmed

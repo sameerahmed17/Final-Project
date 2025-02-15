@@ -9,6 +9,7 @@ import JobsDetailsPAge from './components/jobsdetails/JobsDetailsPAge';
 import HomePage from './components/home/HomePage';
 import { store } from './store/store';
 import { Provider } from 'react-redux';
+import PageNotFound from './components/page-not-found/PageNotFound';
 function App() {
   const router = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ function App() {
       { path: "/profile-details", element: <ProfileDetailsPage /> },
       { path: "/jobs-details", element: <JobsDetailsPAge /> },
       ],
-    },
+    errorElement: <PageNotFound />},
 
   ]);
   return (

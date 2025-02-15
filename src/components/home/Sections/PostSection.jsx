@@ -1,68 +1,31 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addPost } from "../../../store/postSlice/postSlice";
+import React from "react";
 import {
   Avatar, Box, Button, Card, TextField, Modal, Typography
 } from "@mui/material";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import CommentIcon from "@mui/icons-material/Comment";
 import ShareIcon from "@mui/icons-material/Share";
-import ProfileLogo from "../../assets/unnamed.jpg";
 import VideoCallIcon from "@mui/icons-material/VideoCall";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import ArticleIcon from "@mui/icons-material/Article";
+import usePostSection from "./usePostSection";
+import { ToastContainer } from "react-toastify";
+import useProfilePage from "../../profile-details/profile-sections/useProfilePage";
 
 const PostSection = () => {
-  const dispatch = useDispatch();
-  const posts = useSelector((state) => state.posts.posts);
 
-  const [open, setOpen] = useState(false);
-  const [newPostContent, setNewPostContent] = useState("");
-  const [image, setImage] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null);
+  const {handleOpen, posts, handleClose, setNewPostContent, newPostContent,  handleImageChange, imagePreview, handlePost, open} = usePostSection()
 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => {
-    setOpen(false);
-    setNewPostContent("");
-    setImage(null);
-    setImagePreview(null);
-  };
-
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImage(reader.result); 
-        setImagePreview(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handlePost = () => {
-    if (newPostContent.trim() === "") return;
-
-    const newPost = {
-      id: Date.now(), 
-      name: "Sameer Ahmed",
-      role: "Front-End Web Developer | React.js | Next.js | Redux",
-      content: newPostContent,
-      avatar: ProfileLogo,
-      image: image || null,
-    };
-
-    dispatch(addPost(newPost));
-    handleClose();
-  };
-
+  const { avatar, } = useProfilePage()
 
   return (
+  <>
+    <ToastContainer position="top-right" autoClose={3000} />
     <Box>
       <Box className="p-3 rounded-2 d-flex flex-column gap-2 bg-white">
         <Box className="d-flex align-items-center gap-2">
-          <Avatar src={ProfileLogo} alt="Sameer Ahmed" />
+          {/* <Avatar src={ProfileLogo} alt="Sameer Ahmed" /> */}
+          <Avatar src={avatar} />
           <TextField
             fullWidth
             variant="outlined"
@@ -126,6 +89,7 @@ const PostSection = () => {
         </Box>
       </Modal>
     </Box>
+  </>
   );
 };
 

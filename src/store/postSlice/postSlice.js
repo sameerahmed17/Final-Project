@@ -115,6 +115,8 @@ const loadPosts = () => {
 ];
 };
 
+const MAX_POSTS = 50; // ✅ Sirf latest 50 posts store karne ka rule
+
 const postSlice = createSlice({
   name: "posts",
   initialState: {
@@ -123,8 +125,21 @@ const postSlice = createSlice({
   reducers: {
     addPost: (state, action) => {
       const newPost = action.payload;
-      state.posts.unshift(newPost); 
-      localStorage.setItem("posts", JSON.stringify(state.posts)); 
+
+      // ✅ Naya post add karein
+      state.posts.unshift(newPost);
+
+      // ✅ Agar posts 50 se zyada ho gaye, to purane posts delete kar dein
+      if (state.posts.length > MAX_POSTS) {
+        state.posts.pop(); 
+      }
+
+      // ✅ Try-Catch Use Karke Storage Error Handle Karein
+      try {
+        localStorage.setItem("posts", JSON.stringify(state.posts));
+      } catch (error) {
+        console.error("⚠️ Storage limit exceeded:", error);
+      }
     },
   },
 });
