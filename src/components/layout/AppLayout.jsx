@@ -12,13 +12,16 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import PeopleIcon from "@mui/icons-material/People";
 import WorkIcon from "@mui/icons-material/Work";
 import ChatIcon from "@mui/icons-material/Chat";
-import { Avatar, Button, Container, Typography } from "@mui/material";
+import { Avatar, Button, Container, Modal, TextField, Typography } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ProfileLogo from "../assets/unnamed.jpg";
 import { Link, Outlet } from "react-router-dom";
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
-import { Home, People, Work, Notifications } from "@mui/icons-material";
+import { Home, People, Work } from "@mui/icons-material";
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import useProfilePage from "../profile-details/profile-sections/useProfilePage";
+import usePostSection from "../home/Sections/usePostSection";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -60,11 +63,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function AppLayout() {
   const { avatar, } = useProfilePage()
+  
+  const { handleOpen, handleClose, setNewPostContent, newPostContent, handleImageChange, imagePreview, handlePost, open } = usePostSection()
   return (
     <>
-      <AppBar
-        className="bg-white text-black shadow position-static py-2"
-      >
+     <AppBar
+  className="bg-white text-black shadow py-2"
+  sx={{ position: "sticky", top: 0, zIndex: 1100 }}
+>
         <Container maxWidth="xl">
           <Toolbar className="d-flex justify-content-center align-items-center">
             <Link to='/profile-details'>
@@ -177,12 +183,76 @@ export default function AppLayout() {
             >
               <BottomNavigationAction label="Home" icon={<Home />} component={Link} to="/" />
               <BottomNavigationAction label="Network" icon={<People />} />
+              <BottomNavigationAction onClick={handleOpen} label="Post" icon={<AddBoxIcon />} />
               <BottomNavigationAction label="Jobs" icon={<Work />} component={Link} to="/jobs-details" />
-              <BottomNavigationAction label="Notifications" icon={<Notifications />} />
             </BottomNavigation>
           </Toolbar>
         </Container>
       </AppBar>
+       {/* Modal for Post Creation */}
+       <Modal open={open} onClose={handleClose} aria-labelledby="modal-title">
+          <Box
+            className="position-absolute top-50 start-50 translate-middle bg-white shadow-lg p-4 rounded"
+            style={{
+              width: "90%",
+              maxWidth: "800px",
+              maxHeight: "90vh",
+              overflowY: "auto",
+            }}
+          >
+            <Typography id="modal-title" variant="h6">
+              Create a Post
+            </Typography>
+            <TextField
+              fullWidth
+              multiline
+              rows={5}
+              placeholder="What do you want to talk about?"
+              variant="outlined"
+              className="mt-2"
+              value={newPostContent}
+              onChange={(e) => setNewPostContent(e.target.value)}
+            />
+            <Box className="mt-3">
+              <label htmlFor="imageUpload">
+                <CameraAltIcon sx={{cursor: 'pointer',}} />
+              </label>
+              <input
+                type="file"
+                id="imageUpload"
+                accept="image/*"
+                className="d-none"
+                onChange={handleImageChange}
+              />
+            </Box>
+
+            {imagePreview && (
+              <img
+                src={imagePreview}
+                alt="Preview"
+                className="w-100 mt-2 rounded-2"
+              />
+            )}
+
+            <Box className="d-flex justify-content-end mt-3">
+              <Button
+                variant="outlined"
+                color="secondary"
+                onClick={handleClose}
+              >
+                Cancel
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                className="ms-3"
+                onClick={handlePost}
+              >
+                Post
+              </Button>
+            </Box>
+          </Box>
+        </Modal>
       <Outlet />
     </>
   );

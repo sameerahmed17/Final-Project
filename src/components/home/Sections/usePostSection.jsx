@@ -13,8 +13,8 @@ const usePostSection = () => {
   
     const [open, setOpen] = useState(false);
     const [newPostContent, setNewPostContent] = useState("");
-    const [image, setImage] = useState(null);
     const [imagePreview, setImagePreview] = useState(null);
+    const [image, setImage] = useState(null);
   
     const handleOpen = () => setOpen(true);
     const handleClose = () => {
