@@ -40,7 +40,6 @@ const PostSection = () => {
       <Box>
         <Box className="p-3 rounded-2 d-flex flex-column gap-2 bg-white">
           <Box className="d-flex align-items-center gap-2">
-            {/* <Avatar src={ProfileLogo} alt="Sameer Ahmed" /> */}
             <Avatar src={avatar} />
             <TextField
               fullWidth
