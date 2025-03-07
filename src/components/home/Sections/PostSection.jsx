@@ -74,7 +74,7 @@ const PostSection = () => {
 
         {posts.map((post) => (
           <Card key={post.id} className="mb-3  rounded-3">
-            <Box className="d-flex align-items-center px-3">
+            <Box className="d-flex mt-3 px-3">
               <Avatar src={post.avatar} alt={post.name} className="me-2" />
               <Box>
                 <h6>{post.name}</h6>
